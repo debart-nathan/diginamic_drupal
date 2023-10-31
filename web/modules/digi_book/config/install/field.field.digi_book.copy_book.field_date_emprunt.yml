@@ -1,0 +1,21 @@
+uuid: 024a2539-ff43-473e-9e79-b6f8857944b5
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_book.digi_book_type.copy_book
+    - field.storage.digi_book.field_date_emprunt
+  module:
+    - datetime
+id: digi_book.copy_book.field_date_emprunt
+field_name: field_date_emprunt
+entity_type: digi_book
+bundle: copy_book
+label: 'Date emprunt'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
