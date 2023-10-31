@@ -1,0 +1,22 @@
+uuid: 872c752b-68a9-4287-8082-5b7050e0b233
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mycustom_boostrap_sass
+_core:
+  default_config_hash: BLMv-ST-if0bh4TJMJI8sgVZuCamwh8Hc8nQQ4B7roU
+id: mycustom_boostrap_sass_breadcrumbs
+theme: mycustom_boostrap_sass
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

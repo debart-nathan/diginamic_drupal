@@ -1,0 +1,29 @@
+uuid: 0d8abad5-86ab-4e46-80fd-b5f6dee9edd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_book.digi_book_type.book
+    - field.storage.digi_book.field_book_author
+    - node.type.book_author
+id: digi_book.book.field_book_author
+field_name: field_book_author
+entity_type: digi_book
+bundle: book
+label: Auteur
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      book_author: book_author
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

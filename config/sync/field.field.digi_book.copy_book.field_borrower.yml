@@ -1,0 +1,33 @@
+uuid: ddd1b532-7c54-4e09-862e-6b8eeae29c49
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_book.digi_book_type.copy_book
+    - field.storage.digi_book.field_borrower
+  content:
+    - 'user:user:9080f3fc-5203-4115-85c4-2a4374f523fb'
+id: digi_book.copy_book.field_borrower
+field_name: field_borrower
+entity_type: digi_book
+bundle: copy_book
+label: Emprunteur
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: 9080f3fc-5203-4115-85c4-2a4374f523fb
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

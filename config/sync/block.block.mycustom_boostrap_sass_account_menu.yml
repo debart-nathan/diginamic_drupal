@@ -1,0 +1,27 @@
+uuid: 71f2c0b9-cf08-4469-a0d5-e8fe29b86977
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - mycustom_boostrap_sass
+_core:
+  default_config_hash: BMQOKQW0dCik0pMgCwqwfXb7KarL_T85WeC7v1Nas74
+id: mycustom_boostrap_sass_account_menu
+theme: mycustom_boostrap_sass
+region: secondary_menu
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

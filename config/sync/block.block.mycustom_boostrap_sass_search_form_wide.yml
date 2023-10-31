@@ -1,0 +1,23 @@
+uuid: fdb8a0dc-7bd2-4855-91d3-45caeb4a7e72
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - mycustom_boostrap_sass
+_core:
+  default_config_hash: miTIRuyUSaXDldVB-aSJBcmy2UygvJ_qZ3x-Otd9eL8
+id: mycustom_boostrap_sass_search_form_wide
+theme: mycustom_boostrap_sass
+region: top_header_form
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

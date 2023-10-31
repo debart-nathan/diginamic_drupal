@@ -1,0 +1,8 @@
+uuid: 9cba02a9-d17a-4b44-aef3-23e38a5720de
+langcode: en
+status: true
+dependencies: {  }
+name: Genre
+vid: gender
+description: "genre d'œuvre "
+weight: 0

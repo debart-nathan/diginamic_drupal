@@ -1,0 +1,29 @@
+uuid: 6cdf086b-5ea7-47b7-85d7-7c42feda4f9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_book.digi_book_type.book
+    - field.storage.digi_book.field_gender
+    - taxonomy.vocabulary.gender
+id: digi_book.book.field_gender
+field_name: field_gender
+entity_type: digi_book
+bundle: book
+label: Genre
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      gender: gender
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

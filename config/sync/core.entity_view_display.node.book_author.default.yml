@@ -1,0 +1,19 @@
+uuid: 467a0c35-5b5d-411d-beca-1f8d5d909557
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.book_author
+  module:
+    - user
+id: node.book_author.default
+targetEntityType: node
+bundle: book_author
+mode: default
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
