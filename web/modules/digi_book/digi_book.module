@@ -9,11 +9,21 @@ use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
 /**
- * Implements hook_theme().
+ * Implements hook_theme()
+ * @param $existing
+ * @param $type
+ * @param $theme
+ * @param $path
+ * @return \array[][]
  */
-function digi_book_theme(): array {
+
+ function digi_book_theme($existing, $type, $theme, $path) {
   return [
-    'digi_book' => ['render element' => 'elements'],
+    'books_management' => [
+      'variables' => [
+        'user' => NULL,
+      ],
+    ],
   ];
 }
 
@@ -81,3 +91,4 @@ function digi_book_user_predelete(UserInterface $account): void {
     $storage->loadMultiple($digi_book_ids)
   );
 }
+

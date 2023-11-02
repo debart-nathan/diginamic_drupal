@@ -1,0 +1,7 @@
+digi_book.management:
+  path: '/manage-books'
+  defaults:
+    _controller: '\Drupal\digi_book\Controller\DigiBookManagement::index'
+    _title: "Gestion des livres"
+  requirements:
+    _role: 'administrator'
