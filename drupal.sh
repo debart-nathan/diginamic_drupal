@@ -34,3 +34,7 @@ apt install npm -y
 cd ./web/themes/contrib/bootstrap_sass/
 chmod +x scripts/create_subtheme.sh
 bash scripts/create_subtheme.sh
+
+
+composer require 'drupal/restui:^1.21'
+composer en restui
