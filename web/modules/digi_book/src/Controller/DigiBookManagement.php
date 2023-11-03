@@ -34,6 +34,12 @@ class DigiBookManagement extends ControllerBase
         $book_copy_id = $bc->target_id;
         $book_copy = \Drupal::entityTypeManager()->getStorage('digi_book')->load($book_copy_id);
 
+        if ($book_copy === NULL) {
+          // Handle the error, e.g., log it or throw an exception
+          \Drupal::logger('digi_book')->error('Book copy with ID @id not found', ['@id' => $book_copy_id]);
+          continue;
+      }
+
         //recupération de l'entité user pour l'emprunteur
         $borrower_id = $book_copy->get('field_borrower')->target_id;
 
