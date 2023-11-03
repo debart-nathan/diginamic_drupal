@@ -8,6 +8,7 @@
 use Drupal\Core\Render\Element;
 use Drupal\user\UserInterface;
 
+
 /**
  * Implements hook_theme()
  * @param $existing
@@ -22,6 +23,7 @@ use Drupal\user\UserInterface;
     'books_management' => [
       'variables' => [
         'user' => NULL,
+        'books'=>[],
       ],
     ],
   ];
@@ -92,3 +94,24 @@ function digi_book_user_predelete(UserInterface $account): void {
   );
 }
 
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function digi_book_form_digi_book_copy_book_add_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $book_id = \Drupal::request()->query->get('book');
+  if(!empty($book_id)){
+    // Récupération du livre
+    $entity_book = \Drupal::entityTypeManager()->getStorage('digi_book')->load($book_id);
+    // Modification du champ de selection de livre
+    $form['field_book']['widget']['#disabled'] = TRUE;
+    $form['field_book']['widget'][0]['target_id']['#default_value'] = $entity_book;
+
+
+    // Modification du champ label
+    $form['label']['widget'][0]['value']['#default_value'] = $entity_book->label();
+  }else{
+    $form['#prefix'] = '<h2>Attention vous, devez ajouté des exemplaires depuis la <a href="manage-book">gestion des livres</a></h2>';
+  }
+}

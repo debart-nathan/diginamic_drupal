@@ -11,7 +11,30 @@
 
 <div class="row">
 	<section class="offset-md-3 col-md-6">
-		<h3 class="mt-5">Bienvenue
-			{{ user.name }}</h3>
+		<h2 class="mt-5">
+			Bienvenue
+			{{ user.name }}
+		</h2>
+		<h2>Ici nous allons géré les livres</h2>
+		<div>
+			<a href={{ url('entity.digi_book.add_form',{'digi_book_type':'book'} )}} class="btn btn-success">Ajouter livre</a>
+			{% for book_id, book in books %}
+				<h3>{{book.title}}</h3>
+				<a href="{{ url('entity.digi_book.add_form', {'digi_book_type':'copy_book'}, {'query': {'book': book_id}}) }}" class="btn btn-success">Ajouter Copie</a>
+				{% for copy_id, copy_book in book.copies %}
+					<h4>{{copy_id}}
+						:
+						{{copy_book.title}}</h4>
+					<p>
+						Eprunter le
+						{{copy_book.borrow_date}}
+						par
+						{{copy_book.borrower.name}}
+						:
+						{{copy_book.borrower.email}}
+					</p>
+				{% endfor %}
+			{% endfor %}
+		</div>
 	</section>
 </div>
