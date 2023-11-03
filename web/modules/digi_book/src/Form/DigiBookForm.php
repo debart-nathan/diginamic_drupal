@@ -1,9 +1,12 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types = 1);
 
 namespace Drupal\digi_book\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Form controller for the digi book entity edit forms.
@@ -26,6 +29,9 @@ final class DigiBookForm extends ContentEntityForm {
       case SAVED_NEW:
         $this->messenger()->addStatus($this->t('New digi book %label has been created.', $message_args));
         $this->logger('digi_book')->notice('New digi book %label has been created.', $logger_args);
+        if ($this->entity->bundle() === 'copy_book') {
+          $this->addCopyToBook();
+        }
         break;
 
       case SAVED_UPDATED:
@@ -37,9 +43,26 @@ final class DigiBookForm extends ContentEntityForm {
         throw new \LogicException('Could not save the entity.');
     }
 
-    $form_state->setRedirectUrl($this->entity->toUrl());
+    $route_url = Url::fromRoute('digi_book.management');
+    $form_state->setRedirectUrl($route_url);
 
     return $result;
+  }
+
+  /**
+   *
+   */
+  public function addCopyToBook() {
+    // Récupération de l'id du book.
+    $book_id = $this->entity->field_book[0]->target_id;
+
+    // Chargement de l'entity book.
+    $entity_book = \Drupal:: entityTypeManager()->getStorage("digi_book")->load($book_id);
+    $entity_book->get('field_copy_book')->appendItem([
+      'target_id' => $this->entity->id(),
+    ]);
+
+    $entity_book->save();
   }
 
 }
