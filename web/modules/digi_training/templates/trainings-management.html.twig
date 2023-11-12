@@ -1,0 +1,41 @@
+test
+
+{{ attach_library('digi_training/api_fetch') }}
+<div class="row">
+	<section class="offset-md-3 col-md-6">
+		<h2 class="mt-5">
+			Welcome
+			{{ user.name }}
+		</h2>
+		<h2>Here we manage the trainings</h2>
+		<div>
+			<a href={{ url('entity.digi_training.add_form',{'digi_training_type':'training'} )}} class="btn btn-success">Add Training</a>
+			{% for training_id, training in trainings %}
+				<h3>{{training.title}}</h3>
+				<section>{{training.description|raw}}</section>
+				<section>
+				<a href="{{ url('entity.digi_training.add_form', {'digi_training_type':'training_session'}, {'query': {'training': training_id}}) }}" class="btn btn-success">Add Session</a>
+				{% for session_id, session in training.sessions %}
+					<h4>{{session_id}}
+						:
+						{{session.title}}</h4>
+					<p>
+						Start Date
+						{{session.start_date}}
+						End Date
+						{{session.end_date}}
+					</p>
+					<p>Trainers:</p>
+					{% for trainer in session.trainers %}
+						<p>
+							{{trainer.name}}
+							:
+							{{trainer.email}}
+						</p>
+					{% endfor %}
+				{% endfor %}
+				</section>
+			{% endfor %}
+		</div>
+	</section>
+</div>

@@ -1,0 +1,6 @@
+uuid: c088b603-59f5-4795-ab2b-201c254c63e4
+langcode: en
+status: true
+dependencies: {  }
+id: training_session
+label: training_session

@@ -18,7 +18,7 @@ module:
   dblog: 0
   devel: 0
   devel_php: 0
-  digi_book: 0
+  digi_training: 0
   dynamic_page_cache: 0
   editor: 0
   field: 0
@@ -37,7 +37,10 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  rest: 0
+  restui: 0
   search: 0
+  serialization: 0
   shortcut: 0
   standard: 0
   system: 0

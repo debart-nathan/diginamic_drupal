@@ -1,0 +1,58 @@
+uuid: a6ec5c5b-c703-415e-b458-13a1dd0715ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training_session
+    - field.field.digi_training.training_session.field_ending_date
+    - field.field.digi_training.training_session.field_starting_date
+    - field.field.digi_training.training_session.field_trainers
+    - field.field.digi_training.training_session.field_training
+  module:
+    - datetime
+id: digi_training.training_session.default
+targetEntityType: digi_training
+bundle: training_session
+mode: default
+content:
+  field_ending_date:
+    type: datetime_default
+    weight: -3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_starting_date:
+    type: datetime_default
+    weight: -4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_trainers:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_training:
+    type: entity_reference_autocomplete
+    weight: -1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  label:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

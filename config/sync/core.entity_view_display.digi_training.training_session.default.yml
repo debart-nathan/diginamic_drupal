@@ -1,0 +1,60 @@
+uuid: fecc28ae-666b-4771-8f79-be46820bafd5
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training_session
+    - field.field.digi_training.training_session.field_ending_date
+    - field.field.digi_training.training_session.field_starting_date
+    - field.field.digi_training.training_session.field_trainers
+    - field.field.digi_training.training_session.field_training
+  module:
+    - datetime
+id: digi_training.training_session.default
+targetEntityType: digi_training
+bundle: training_session
+mode: default
+content:
+  field_ending_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  field_starting_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  field_trainers:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_training:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden: {  }

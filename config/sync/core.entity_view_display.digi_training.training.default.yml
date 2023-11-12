@@ -1,0 +1,39 @@
+uuid: b60ca9e7-a28e-4e95-9aa1-32e7c86bdb12
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training
+    - field.field.digi_training.training.field_description
+    - field.field.digi_training.training.field_sessions
+  module:
+    - text
+id: digi_training.training.default
+targetEntityType: digi_training
+bundle: training
+mode: default
+content:
+  field_description:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: -4
+    region: content
+  field_sessions:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: -3
+    region: content
+  label:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: -5
+    region: content
+hidden: {  }

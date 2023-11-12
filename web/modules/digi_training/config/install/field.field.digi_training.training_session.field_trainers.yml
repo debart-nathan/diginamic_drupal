@@ -1,0 +1,21 @@
+uuid: 3b4dede4-7219-41b2-b3b6-1e0f947e2428
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training_session
+    - field.storage.digi_training.field_trainers
+id: digi_training.training_session.field_trainers
+field_name: field_trainers
+entity_type: digi_training
+bundle: training_session
+label: formateurs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings: {  }
+field_type: entity_reference

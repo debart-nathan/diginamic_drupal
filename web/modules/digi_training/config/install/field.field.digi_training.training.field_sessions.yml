@@ -1,0 +1,29 @@
+uuid: d74b9388-34db-48e2-a414-dfbcf8b48d23
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training
+    - digi_training.digi_training_type.training_session
+    - field.storage.digi_training.field_sessions
+id: digi_training.training.field_sessions
+field_name: field_sessions
+entity_type: digi_training
+bundle: training
+label: sessions
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:digi_training'
+  handler_settings:
+    target_bundles:
+      training_session: training_session
+    sort:
+      field: field_starting_date
+      direction: DESC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

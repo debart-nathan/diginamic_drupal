@@ -1,0 +1,11 @@
+entity.digi_training_type.collection:
+  title: 'Digi training types'
+  description: 'Manage and CRUD actions on Digi training type.'
+  parent: system.admin_structure
+  route_name: entity.digi_training_type.collection
+
+entity.digi_training.collection:
+  title: 'Digi trainings'
+  description: 'List of digi trainings.'
+  route_name: entity.digi_training.collection
+  parent: system.admin_content

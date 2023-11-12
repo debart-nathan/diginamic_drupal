@@ -1,0 +1,7 @@
+digi_training.management:
+  path: '/manage-trainings'
+  defaults:
+    _title: 'Digi Training Management'
+    _controller: '\Drupal\digi_training\Controller\DigiTrainingManagement::index'
+  requirements:
+    _role: 'administrator'

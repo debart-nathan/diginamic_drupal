@@ -1,0 +1,24 @@
+uuid: b66f83f4-f4f1-485b-a834-1c794d4308aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training
+    - field.storage.digi_training.field_description
+  module:
+    - text
+id: digi_training.training.field_description
+field_name: field_description
+entity_type: digi_training
+bundle: training
+label: description
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

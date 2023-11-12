@@ -1,0 +1,21 @@
+uuid: b1fcbe93-6664-43b6-994c-03a59c7ab3ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training_session
+    - field.storage.digi_training.field_starting_date
+  module:
+    - datetime
+id: digi_training.training_session.field_starting_date
+field_name: field_starting_date
+entity_type: digi_training
+bundle: training_session
+label: 'date de début'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

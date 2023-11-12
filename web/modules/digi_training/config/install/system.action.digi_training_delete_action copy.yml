@@ -1,0 +1,13 @@
+uuid: bad1b89d-d21d-4f7e-81ef-7c6891d9d0d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - digi_training
+_core:
+  default_config_hash: r1FgtfYDjve07eM4hVtWKV6MDs8lhIqnLPXQLuic4A4
+id: digi_training_delete_action
+label: 'Delete digi trainings'
+type: digi_training
+plugin: 'entity:delete_action:digi_training'
+configuration: {  }

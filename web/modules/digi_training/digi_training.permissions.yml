@@ -1,0 +1,4 @@
+administer digi_training types:
+  title: 'Administer digi training types'
+  description: 'Maintain the types of digi training entity.'
+  restrict access: true

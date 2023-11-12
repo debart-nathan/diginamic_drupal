@@ -1,0 +1,20 @@
+uuid: de3b5413-2d89-4520-afdd-a16ff635afd6
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime
+    - digi_training
+id: digi_training.field_starting_date
+field_name: field_starting_date
+entity_type: digi_training
+type: datetime
+settings:
+  datetime_type: date
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

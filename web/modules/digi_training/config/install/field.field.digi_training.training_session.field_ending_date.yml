@@ -1,0 +1,21 @@
+uuid: cb5dd47d-136f-4edb-a44b-80e4ae9149ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - digi_training.digi_training_type.training_session
+    - field.storage.digi_training.field_ending_date
+  module:
+    - datetime
+id: digi_training.training_session.field_ending_date
+field_name: field_ending_date
+entity_type: digi_training
+bundle: training_session
+label: 'date de fin'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,5 @@
+name: 'digi_training'
+type: module
+description: 'module de gestion de formations'
+package: Custom
+core_version_requirement: ^10

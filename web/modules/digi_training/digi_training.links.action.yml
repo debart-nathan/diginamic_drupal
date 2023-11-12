@@ -1,0 +1,11 @@
+digi_training.type_add:
+  title: 'Add digi training type'
+  route_name: entity.digi_training_type.add_form
+  appears_on:
+    - entity.digi_training_type.collection
+
+digi_training.add_page:
+  title: 'Add digi training'
+  route_name: entity.digi_training.add_page
+  appears_on:
+    - entity.digi_training.collection

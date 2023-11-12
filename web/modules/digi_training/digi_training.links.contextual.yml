@@ -1,0 +1,10 @@
+entity.digi_training.edit_form:
+  route_name: entity.digi_training.edit_form
+  group: digi_training
+  title: 'Edit'
+
+entity.digi_training.delete_form:
+  route_name: entity.digi_training.delete_form
+  group: digi_training
+  title: 'Delete'
+  weight: 10

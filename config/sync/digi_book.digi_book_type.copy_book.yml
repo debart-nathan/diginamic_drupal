@@ -1,6 +1,0 @@
-uuid: 7788448d-16b2-4b69-94c8-05375235cc73
-langcode: en
-status: true
-dependencies: {  }
-id: copy_book
-label: 'Copy Book'

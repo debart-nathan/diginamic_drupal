@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for digi_training module.
+ */
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Implements hook_theme().
+ */
+function digi_training_theme($existing, $type, $theme, $path): array
+{
+  return [
+    'trainings_management' => [
+      'variables' => [
+        'user' => NULL,
+        'trainings' => []
+      ],
+    ],
+  ];
+}
+
+
+
+/**
+ * Prepares variables for digi training templates.
+ *
+ * Default template: digi-training.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the digi training information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_digi_training(array &$variables): void
+{
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function digi_training_form_digi_training_training_session_add_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
+  $training_id = \Drupal::request()->query->get('training');
+  if (!empty($training_id)) {
+    // Load the training
+    $entity_training = \Drupal::entityTypeManager()->getStorage('digi_training')->load($training_id);
+    // Modify the training selection field
+    $form['field_training']['widget']['#disabled'] = TRUE;
+    $form['field_training']['widget'][0]['target_id']['#default_value'] = $entity_training;
+
+    // Modify the label field
+    $form['label']['widget'][0]['value']['#default_value'] = $entity_training->label();
+  } else {
+    $form['#prefix'] = '<h2>Attention, you must add sessions from the <a href="manage-training">training management</a> page.</h2>';
+  }
+}

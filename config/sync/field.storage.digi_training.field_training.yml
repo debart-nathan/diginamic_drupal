@@ -1,0 +1,19 @@
+uuid: d4f3a8ec-a7ee-4d0c-9191-e0ecfe5c8b11
+langcode: en
+status: true
+dependencies:
+  module:
+    - digi_training
+id: digi_training.field_training
+field_name: field_training
+entity_type: digi_training
+type: entity_reference
+settings:
+  target_type: digi_training
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
